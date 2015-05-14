@@ -12,7 +12,7 @@
 
 include("helpers/simple_html_dom.php");
 
-$correiosSRO = file_get_html("http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_ITEMCODE=&P_LINGUA=001&P_TESTE=&P_TIPO=001&Z_ACTION=Search&P_COD_UNI=" . $_REQUEST["tracking"]);
+$correiosSRO = file_get_html("http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_ITEMCODE=&P_LINGUA=001&P_TESTE=&P_TIPO=001&Z_ACTION=Search&P_COD_UNI=" . strtoupper(trim($_REQUEST["tracking"])));
 $out = array();
 
 function getSroArray($table) {
